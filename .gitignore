@@ -1,0 +1,28 @@
+flirdataset/
+flirdataset_augmented_*/
+# Modelli e output
+*.pt
+runs/
+# Ambiente virtuale
+venv/
+# Python cache
+__pycache__/
+*.pyc
+# VSCode/IDE
+.vscode/
+.idea/
+flirdataset_augmented_9.zip
+flirdataset_augmented_10.zip
+flirdataset_augmented_11.zip
+flirdataset.zip
+flirdatasetcoco.zip
+best validations/*.csv
+flirdatasetcoco/
+flirdatasetcoco/test/data/
+confronto yolo s/*.png
+wandb/
+yolo_local/
+yolo_prova/
+yolo/
+*.pth
+rf_detr_model/log.txt
