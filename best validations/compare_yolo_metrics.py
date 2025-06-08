@@ -1,19 +1,12 @@
 import pandas as pd
 import matplotlib
-matplotlib.use('Agg')  # backend per salvare i grafici senza GUI
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 
 # Lista file CSV da caricare
 files = {
-    "yolov8s": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov8s.csv",
-    "yolov9s": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov9s.csv",
-    "yolov10s": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov10s.csv",
-    "yolov11s": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov11s.csv",
-    "yolov12s": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov12s.csv",
-    "yolov11s_aug9": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov11s_aug9.csv",
-    "yolov11s_aug10": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov11s_aug10.csv",
-    "yolov11s_aug11": r"C:\Users\simo5\Desktop\yoloprovalocale\best validations\yolov11s_aug11.csv",
+    
 }
 
 # Metriche globali da confrontare

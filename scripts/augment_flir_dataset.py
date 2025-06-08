@@ -62,31 +62,31 @@ def transforms_preset_11_v2(min_visibility):
 
 def transforms_preset_10_v3(min_visibility):
     return A.Compose([
-        A.CLAHE(p=0.6),  # aumento leggero del contrasto locale
-        A.RandomBrightnessContrast(p=0.6),  # migliora variazioni di intensità termica
-        A.Equalize(mode='cv', p=0.5),  # equalizzazione istogramma, utile in IR
-        A.RandomGamma(gamma_limit=(80, 120), p=0.4),  # modifica non lineare della luminosità
-        A.HorizontalFlip(p=0.5),  # invariato
-        A.RandomRotate90(p=0.3),  # invariato
-        A.BBoxSafeRandomCrop(p=0.3),  # invariato
-        A.MotionBlur(blur_limit=5, p=0.3),  # utile per simulare sfocature da movimento
-        A.ISONoise(color_shift=(0.01, 0.05), intensity=(0.1, 0.2), p=0.2),  # simula rumore termico
+        A.CLAHE(p=0.6),
+        A.RandomBrightnessContrast(p=0.6),
+        A.Equalize(mode='cv', p=0.5),
+        A.RandomGamma(gamma_limit=(80, 120), p=0.4), 
+        A.HorizontalFlip(p=0.5),
+        A.RandomRotate90(p=0.3),
+        A.BBoxSafeRandomCrop(p=0.3),
+        A.MotionBlur(blur_limit=5, p=0.3), 
+        A.ISONoise(color_shift=(0.01, 0.05), intensity=(0.1, 0.2), p=0.2),
     ], bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels'], min_visibility=min_visibility))
 
 def transforms_preset_10_v4(min_visibility):
     return A.Compose([
-        A.CLAHE(p=0.5),  # Applica il filtro CLAHE (Equalizzazione dell'istogramma adattativa locale) al 50%, migliorando il contrasto in immagini poco illuminate
-        A.RandomBrightnessContrast(p=0.6),  # Varia casualmente luminosità e contrasto al 60%, simulando condizioni di illuminazione diverse
-        A.HorizontalFlip(p=0.5),  # Effettua un flip orizzontale (specchio) dell'immagine al 50%, utile per aumentare la varietà delle pose
-        A.Rotate(limit=15, border_mode=0, p=0.4),  # Ruota casualmente entro ±15° con modalità di bordo costante, simulando piccole variazioni realistiche di orientamento
-        A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.1, rotate_limit=0, border_mode=0, p=0.4),  # Trasla (5%) e scala (±10%) senza rotazione, utile per robustezza a piccoli cambi di posizione o zoom
-        A.GridDistortion(num_steps=5, distort_limit=0.3, p=0.2),  # Applica distorsione a griglia per simulare deformazioni del sensore termico
-        A.Equalize(mode='cv', p=0.5),  # Equalizzazione dell’istogramma globale con OpenCV, migliora la distribuzione dei livelli di grigio
-        A.RandomGamma(gamma_limit=(85, 115), p=0.3),  # Applica una correzione gamma casuale tra 0.85 e 1.15 al 30%, per simulare variazioni nella risposta termica
-        A.BBoxSafeRandomCrop(p=0.3),  # Esegue un crop casuale preservando le bounding box (senza tagliare oggetti), al 30%
-        A.OneOf([  # Applica **uno solo** tra i seguenti effetti di blur al 30%:
-            A.MotionBlur(blur_limit=5),  # Simula sfocatura da movimento
-            A.MedianBlur(blur_limit=3),  # Sfocatura mediana, utile per ridurre il rumore termico
+        A.CLAHE(p=0.5),
+        A.RandomBrightnessContrast(p=0.6),
+        A.HorizontalFlip(p=0.5),
+        A.Rotate(limit=15, border_mode=0, p=0.4),
+        A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.1, rotate_limit=0, border_mode=0, p=0.4),
+        A.GridDistortion(num_steps=5, distort_limit=0.3, p=0.2),
+        A.Equalize(mode='cv', p=0.5),
+        A.RandomGamma(gamma_limit=(85, 115), p=0.3),
+        A.BBoxSafeRandomCrop(p=0.3),
+        A.OneOf([
+            A.MotionBlur(blur_limit=5),
+            A.MedianBlur(blur_limit=3),
         ], p=0.3),
     ], bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels'], min_visibility=min_visibility))
 
@@ -166,16 +166,16 @@ def apply_augmentations(img_dir, label_dir, output_img_dir, output_label_dir, tr
 
 def main():
     # Percorsi assoluti del dataset originale
-    img_dir_train = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/train/images"
-    label_dir_train = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/train/labels"
-    img_dir_val = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/val/images"
-    label_dir_val = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/val/labels"
+    img_dir_train = ""
+    label_dir_train = ""
+    img_dir_val = ""
+    label_dir_val = ""
 
     # Percorsi assoluti del dataset trasformato
-    augmented_img_dir_train = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset_augmented_10_v4/train/images"
-    augmented_label_dir_train = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset_augmented_10_v4/train/labels"
-    augmented_img_dir_val = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset_augmented_10_v4/val/images"
-    augmented_label_dir_val = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset_augmented_10_v4/val/labels"
+    augmented_img_dir_train = ""
+    augmented_label_dir_train = ""
+    augmented_img_dir_val = ""
+    augmented_label_dir_val = ""
 
     # Scegli il preset di Albumentations
     transform = transforms_preset_10_v4(min_visibility=0.1)

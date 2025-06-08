@@ -2,10 +2,10 @@ import json
 import os
 
 # Percorsi assoluti ai file COCO e alle directory di output
-coco_train_file = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/coco_train.json"  # File COCO per il train
-coco_val_file = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/coco_val.json"      # File COCO per il validation
-output_dir_train = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/labels/train"    # Directory per le etichette YOLO del train
-output_dir_val = "c:/Users/simo5/Desktop/yoloprovalocale/flirdataset/labels/val"        # Directory per le etichette YOLO del validation
+coco_train_file = ""  # File COCO per il train
+coco_val_file = ""      # File COCO per il validation
+output_dir_train = ""    # Directory per le etichette YOLO del train
+output_dir_val = ""        # Directory per le etichette YOLO del validation
 
 # Funzione per convertire COCO in YOLO
 def convert_coco_to_yolo(coco_annotation_file, output_dir):

@@ -6,8 +6,8 @@ def main():
         project="rf-detr-flir",
         name="train_rf_detr_with_wandb",
         config={
-            "dataset_dir": "C:/Users/simo5/Desktop/yoloprovalocale/flirdatasetcoco",
-            "output_dir": "C:/Users/simo5/Desktop/yoloprovalocale/rf_detr_model",
+            "dataset_dir": "",
+            "output_dir": "",
             "batch_size": 4,
             "num_epochs": 10,
             "grad_accum_steps": 4,

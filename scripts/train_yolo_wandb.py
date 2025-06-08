@@ -62,13 +62,13 @@ class WandbLoggerCallback:
 
 def main():
     MODEL = 'yolov8n.pt'
-    DATA = 'flirdataset_augmented_10_v4/data.yaml'
+    DATA = ''
     EPOCHS = 50
     IMG_SIZE = 640
     BATCH = 16
     PATIENCE = 10
-    PROJECT_NAME = 'yolo_local'
-    RUN_NAME = 'yolov8n_flir_aug_preset10v4'
+    PROJECT_NAME = ''
+    RUN_NAME = ''
 
     wandb.init(project=PROJECT_NAME, name=RUN_NAME)
 

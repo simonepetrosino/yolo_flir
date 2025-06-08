@@ -6,14 +6,7 @@ folder_path = os.path.abspath(os.path.dirname(__file__))
 
 # Nomi dei file e dei modelli corrispondenti
 model_files = {
-    "yolov8s": "yolov8s.csv",
-    "yolov9s": "yolov9s.csv",
-    "yolov10s": "yolov10s.csv",
-    "yolov11s": "yolov11s.csv",
-    "yolov12s": "yolov12s.csv",
-    "yolov11s_aug9": "yolov11s_aug9.csv",
-    "yolov11s_aug10": "yolov11s_aug10.csv",
-    "yolov11s_aug11": "yolov11s_aug11.csv",
+    
 }
 
 # Lista dei dizionari con i dati per ogni modello
