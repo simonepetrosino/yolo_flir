@@ -11,12 +11,9 @@ __pycache__/
 # VSCode/IDE
 .vscode/
 .idea/
-flirdataset_augmented_9.zip
-flirdataset_augmented_10.zip
-flirdataset_augmented_11.zip
+flirdataset_augmented_*.zip
 flirdataset.zip
 flirdatasetcoco.zip
-best validations/*.csv
 flirdatasetcoco/
 flirdatasetcoco/test/data/
 confronto yolo s/*.png
