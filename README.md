@@ -1,9 +1,9 @@
 
-# YOLO on FLIR ADAS Thermal Dataset 🔥📷
+# YOLO on FLIR ADAS Thermal Dataset
 
 Il dataset utilizzato è il **Teledyne FLIR ADAS Thermal Dataset (versione 2)**.
 
-## 🧠 Obiettivi del progetto
+##  Obiettivi del progetto
 
 - Allenare modelli **YOLOv8–YOLOv12** su immagini termiche.  
 - Confrontare prestazioni tra modelli **one-stage (YOLO)** e **two-stage (RF-DETR)**.  
@@ -12,14 +12,14 @@ Il dataset utilizzato è il **Teledyne FLIR ADAS Thermal Dataset (versione 2)**.
   - Estensioni preset 10, 11
   - Combinazioni multi-preset 
 
-## 📦 Dataset
+##  Dataset
 
 - Dataset: [FLIR ADAS Thermal v2](https://www.kaggle.com/datasets/samdazel/teledyne-flir-adas-thermal-dataset-v2)  
 - Formato: convertito da COCO a YOLO con `coco_to_yolo.py`  
 - Split: `train`, `val`, `test`  
 - Annotazioni: verificate anche con [Roboflow](https://roboflow.com)
 
-## 🔧 Requisiti
+##  Requisiti
 
 ```bash
 pip install -r requirements.txt
@@ -31,7 +31,7 @@ Oppure installa manualmente:
 pip install ultralytics wandb albumentations opencv-python
 ```
 
-## 🚀 Training
+##  Training
 
 ### YOLOv9s con W&B logging
 
@@ -48,7 +48,7 @@ python scripts/train_rfdetr_wandb.py
 ```
 
 
-## 🧪 Validazione e analisi metriche
+##  Validazione e analisi metriche
 
 Per generare i CSV e i riassunti metrici:
 
@@ -61,7 +61,7 @@ Output:
 - `summary_all.csv`  
 - `map5095_per_class.csv`
 
-## 🧱 Augmentazione
+##  Augmentation
 
 ### Dataset aumentato con Albumentations:
 
@@ -91,11 +91,11 @@ Sono disponibili:
 - 📊 **Tracking esperimenti con W&B:**  
   https://wandb.ai/simone-petrosino
 
-## 👨Tesi
+## Tesi
 
 Questo progetto è parte della mia tesi di laurea triennale presso l'Università di Firenze, incentrata sull’uso di tecniche di deep learning per il riconoscimento di oggetti in ambienti a bassa visibilità tramite immagini termiche.
 
-## ✍️ Autore
+##  Autore
 
 **Simone Petrosino**  
 GitHub: https://github.com/simonepetrosino  
