@@ -1,4 +1,5 @@
-flirdataset/
+flirdataset/*
+!flirdataset/data.yaml
 flirdataset_augmented_*/
 # Modelli e output
 *.pt
@@ -23,3 +24,5 @@ yolo_prova/
 yolo/
 *.pth
 rf_detr_model/log.txt
+yolo_lightning/
+

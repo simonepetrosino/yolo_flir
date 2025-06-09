@@ -15,9 +15,10 @@ Il dataset utilizzato è il **Teledyne FLIR ADAS Thermal Dataset (versione 2)**.
 ##  Dataset
 
 - Dataset: [FLIR ADAS Thermal v2](https://www.kaggle.com/datasets/samdazel/teledyne-flir-adas-thermal-dataset-v2)  
-- Formato: convertito da COCO a YOLO con `coco_to_yolo.py`  
+- Formato: convertito da COCO a YOLO con `coco_to_yolo.py` e `coco_to_yolo_test.py`   
 - Split: `train`, `val`, `test`  
 - Annotazioni: verificate anche con [Roboflow](https://roboflow.com)
+- File data.yaml fornito nel repository (da inserire il percorso delle cartelle train e val)
 
 ##  Requisiti
 
@@ -33,13 +34,13 @@ pip install ultralytics wandb albumentations opencv-python
 
 ##  Training
 
-### YOLOv9s con W&B logging
+### YOLO con W&B logging
 
 ```bash
 python scripts/train_yolo_wandb.py
 ```
 
-Modifica i parametri direttamente nello script o passali da terminale (modello, dataset, epochs, ecc.).
+Modifica i parametri direttamente nello script (modello, dataset, epochs, ecc.).
 
 ### RF-DETR
 
@@ -88,7 +89,7 @@ Sono disponibili:
 - 📂 **Drive con i risultati del training:**  
   
 
-- 📊 **Tracking esperimenti con W&B:**  
+- **Tracking esperimenti con W&B:**  
   https://wandb.ai/simone-petrosino
 
 ## Tesi
